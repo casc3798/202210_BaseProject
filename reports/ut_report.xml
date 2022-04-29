@@ -1,5 +1,6 @@
 <testExecutions version="1">
   <file path="src/app/plantas/lista-plantas/lista-plantas.component.spec.ts">
-    <testCase name="ListaPlantasComponent should create" duration="55"/>
+    <testCase name="ListaPlantasComponent should create" duration="70"/>
+    <testCase name="ListaPlantasComponent debería crear la tabla correctamente con sus encabezados y filas" duration="14"/>
   </file>
 </testExecutions>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Planta } from '../planta';
+import { Planta, TiposPlanta } from '../planta';
 import { PlantasService } from '../plantas.service';
 
 @Component({
@@ -10,13 +10,29 @@ import { PlantasService } from '../plantas.service';
 })
 export class ListaPlantasComponent implements OnInit {
   plantas!: Planta[];
+  numPlantasInterior: number = 0;
+  numPlantasExterior: number = 0;
 
   constructor(private plantasService: PlantasService) {}
 
   ngOnInit() {
-    console.log('Iniciando lista plantas');
     this.plantasService.getPlantas().subscribe((plantas: Planta[]) => {
       this.plantas = plantas;
+      this.calcularTiposPlanta(this.plantas);
     });
+  }
+
+  calcularTiposPlanta(plantas: Planta[]): void {
+    let interior = 0;
+    let exterior = 0;
+    plantas.forEach((planta: Planta) => {
+      if (planta.tipo === TiposPlanta.INTERIOR) {
+        interior++;
+      } else {
+        exterior++;
+      }
+    });
+    this.numPlantasInterior = interior;
+    this.numPlantasExterior = exterior;
   }
 }

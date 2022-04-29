@@ -1,3 +1,7 @@
 * [lang^=en] {
   color: green;
 }
+
+img {
+  margin-bottom: 1rem;
+}

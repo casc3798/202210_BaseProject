@@ -13,3 +13,8 @@ footer{
   bottom: 0;
   width: 100%;
 }
+
+div.app-header {
+  margin-top: 1rem;
+  font-family: serif;
+}
